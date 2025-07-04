@@ -494,3 +494,12 @@
     (message "Convertendo para Org...")
     (shell-command cmd2)
     (message "✅ Exportado para %s" org-file)))
+
+
+;; Redefinir S-TAB (shift-tab) para promover itens/headings no Org-mode
+(with-eval-after-load 'org
+  ;; Redefine S-TAB apenas no org-mode
+  (define-key org-mode-map (kbd "<S-tab>") #'org-shiftleft)
+
+  ;; Opcional: preserve o org-shifttab (folds) em outra tecla, ex: C-c <tab>
+  (define-key org-mode-map (kbd "C-c <tab>") #'org-shifttab))
