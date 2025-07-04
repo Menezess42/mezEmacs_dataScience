@@ -453,7 +453,7 @@
 
 (add-hook 'org-src-mode-hook
           (lambda () (local-set-key (kbd "C-c c") #'mez/org-src-exit-or-edit)))
-(setq org-src-window-setup 'split-window-right)  ;; Abre à direita
+; (setq org-src-window-setup 'split-window-right)  ;; Abre à direita
 
 ; (setq org-src-fontify-natively t)
 ; (setq org-src-tab-acts-natively t)
