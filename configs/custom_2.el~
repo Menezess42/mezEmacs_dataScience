@@ -1,0 +1,43 @@
+;;; -*- lexical-binding: t -*-
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(all-the-icons blacken centered-cursor-mode centered-window
+		   company-org-block company-quickhelp counsel
+		   dashboard direnv doom-modeline ein elpy
+		   evil-collection flycheck helpful ivy-posframe
+		   ivy-rich jupyter nix-mode no-littering org-bullets
+		   rainbow-delimiters rainbow-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:background "#22303c" :foreground "#d8dee9"))))
+ '(cursor ((t (:background "#e5e9f0"))))
+ '(flycheck-error ((t (:underline (:style wave :color "#bf616a")))))
+ '(flycheck-warning ((t (:underline (:style wave :color "#ebcb8b")))))
+ '(font-lock-builtin-face ((t (:foreground "#88c0d0"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#56636f"))))
+ '(font-lock-comment-face ((t (:foreground "#56636f"))))
+ '(font-lock-constant-face ((t (:foreground "#88c0d0"))))
+ '(font-lock-function-name-face ((t (:foreground "#d08770"))))
+ '(font-lock-keyword-face ((t (:foreground "#bf616a"))))
+ '(font-lock-string-face ((t (:foreground "#a3be8c"))))
+ '(font-lock-type-face ((t (:foreground "#ebcb8b"))))
+ '(font-lock-variable-name-face ((t (:foreground "#81a1c1"))))
+ '(hl-line ((t (:background "#2e3c48"))))
+ '(line-number ((t (:foreground "#2e3c48"))))
+ '(line-number-current-line ((t (:foreground "#d8dee9" :background "#2e3c48"))))
+ '(mode-line ((t (:background "#2e3c48"))))
+ '(mode-line-inactive ((t (:background "#2e3c48"))))
+ '(org-block ((t (:background "#301934" :extend t))))
+ '(org-block-begin-line ((t (:box (:line-width 3 :color "purple") :foreground "purple" :background "#46005f" :extend t))))
+ '(org-block-end-line ((t (:box (:line-width 3 :color "purple") :foreground "purple" :background "#46005f" :extend t))))
+ '(vertical-border ((t (:foreground "#5e81ac"))))
+ '(window-divider ((t (:foreground "#5e81ac" :background "#5e81ac"))))
+ '(window-divider-first-pixel ((t (:foreground "#5e81ac" :background "#5e81ac"))))
+ '(window-divider-last-pixel ((t (:foreground "#5e81ac" :background "#5e81ac")))))
