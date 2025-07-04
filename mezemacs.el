@@ -279,7 +279,7 @@
                   (org-level-3 . 1.05)
                   (org-level-4 . 1.0)))
     (set-face-attribute (car face) nil
-                        :font "FiraCode Nerd Font" :weight 'regular :height (* 1.5 (cdr face))))
+                        :font "FiraCode Nerd Font" :weight 'regular :height (* 1 (cdr face))))
   (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
   (set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
   (set-face-attribute 'org-table nil   :inherit '(shadow fixed-pitch))
@@ -496,10 +496,16 @@
     (message "✅ Exportado para %s" org-file)))
 
 
-;; Redefinir S-TAB (shift-tab) para promover itens/headings no Org-mode
-(with-eval-after-load 'org
-  ;; Redefine S-TAB apenas no org-mode
-  (define-key org-mode-map (kbd "<S-tab>") #'org-shiftleft)
+;; Substituir completamente o comportamento de S-TAB no Org-mode
+(defun mez/org-override-shifttab ()
+  "Redefinir S-TAB no Org-mode para promover itens (desindentar) em vez de fazer folding."
+  (when (eq major-mode 'org-mode)
+    ;; Override na keymap principal
+    (define-key org-mode-map (kbd "<S-tab>") #'org-shiftleft)
+    ;; Override no mapa especial de keys com modificadores
+    (define-key org-mode-map (kbd "S-<iso-lefttab>") #'org-shiftleft)
 
-  ;; Opcional: preserve o org-shifttab (folds) em outra tecla, ex: C-c <tab>
-  (define-key org-mode-map (kbd "C-c <tab>") #'org-shifttab))
+    ;; Se quiser manter o folding original, coloque em C-c <tab>
+    (define-key org-mode-map (kbd "C-c <tab>") #'org-shifttab)))
+
+(add-hook 'org-mode-hook #'mez/org-override-shifttab)
